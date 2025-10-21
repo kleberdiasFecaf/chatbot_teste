@@ -1,0 +1,136 @@
+/* --- Estilos Globais --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6; /* Um cinza bem claro */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* --- Container Principal do Chat --- */
+#chat-container {
+    width: 100%;
+    max-width: 600px; /* Largura máxima */
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Garante que os cantos arredondados sejam aplicados */
+    height: 70vh; /* Altura de 70% da tela */
+}
+
+/* --- Log de Mensagens --- */
+#chat-log {
+    flex-grow: 1; /* Ocupa o espaço disponível */
+    padding: 20px;
+    overflow-y: auto; /* Adiciona barra de rolagem se necessário */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre as mensagens */
+    background-color: #f9f9f9;
+}
+
+/* --- Estilo Base das Mensagens --- */
+.message {
+    padding: 12px 16px;
+    border-radius: 18px;
+    line-height: 1.5;
+    max-width: 80%; /* Mensagens não ocupam a largura toda */
+    word-wrap: break-word; /* Quebra palavras longas */
+}
+
+.message strong {
+    display: block; /* Coloca o nome do remetente em linha separada */
+    margin-bottom: 4px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* --- Mensagem do Usuário (Você) --- */
+.user-message {
+    background-color: #007bff; /* Azul */
+    color: #ffffff;
+    align-self: flex-end; /* Alinha à direita */
+    border-bottom-right-radius: 4px; /* "Rabicho" */
+}
+
+.user-message strong {
+    color: #e0e0e0; /* Cor mais clara para o nome "Você" */
+}
+
+/* --- Mensagem do Bot (Gemini) --- */
+.bot-message {
+    background-color: #e9ecef; /* Cinza claro */
+    color: #333;
+    align-self: flex-start; /* Alinha à esquerda */
+    border-bottom-left-radius: 4px; /* "Rabicho" */
+}
+
+.bot-message strong {
+    color: #007bff; /* Destaca o nome do Bot */
+}
+
+/* --- Container do Input (Barra de Digitação) --- */
+#input-container {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 15px;
+    background-color: #fff;
+}
+
+#user-input {
+    flex-grow: 1; /* Ocupa o espaço disponível */
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Cantos arredondados */
+    padding: 10px 15px;
+    font-size: 16px;
+    margin-right: 10px;
+    outline: none; /* Remove a borda azul ao focar */
+    transition: border-color 0.2s;
+}
+
+#user-input:focus {
+    border-color: #007bff; /* Destaque ao focar */
+}
+
+/* --- Botão Enviar --- */
+#send-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%; /* Botão circular */
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#send-button:hover {
+    background-color: #0056b3; /* Cor mais escura no hover */
+}
+
+#send-button:active {
+    transform: scale(0.95); /* Efeito de clique */
+}
+
+/* Adicionando um ícone simples de "enviar" (pode ser um emoji ou SVG) */
+#send-button::before {
+    content: '➤'; /* Você pode trocar por um ícone de SVG */
+    font-family: sans-serif;
+    transform: translateX(1px);
+}
