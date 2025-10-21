@@ -23,7 +23,7 @@ export default async function handler(req, res) {
 
         // --- AQUI ESTÁ A CORREÇÃO FINAL ---
         // Se o "flash" não funciona, vamos usar o "pro".
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
         // --- FIM DA CORREÇÃO ---
 
         const result = await model.generateContent(prompt);
